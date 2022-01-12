@@ -32,9 +32,6 @@ const insertCarrozzaElement = document.getElementById('insert-carrozza');
 const insertCpElement = document.getElementById('insert-cp');
 const insertPriceElement = document.getElementById('insert-price');
 
-// Creo le variabili per il calcolo del costo del biglietto
-
-
 // Faccio funzionare i button
 buttonElement.addEventListener('click', function () {
     const nameValue = nameElement.value;
@@ -54,7 +51,10 @@ buttonElement.addEventListener('click', function () {
     kmElement.value = '';
     ageElement.value = '';
 
-    if (nameValue) {
+    if (!(nameValue) || isNaN(kmValue)) {
+    alert ('Hai inserito dei valori non validi')
+
+    } else {
     insertNameElement.innerText = nameValue;
     
     // Calcolo il prezzo del biglietto e mostro in pagina i risultati
