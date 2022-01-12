@@ -14,26 +14,62 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="ticket" class="container">
         <div class="row g-4">
-            <div class="col-12 pt-5 text-center">
-                <h3>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h3>
+            <div class="col-10 offset-1 pt-5 text-center">
+                <h3 class="fw-bold text-white">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h3>
                 <div class="form">
-                    <label for="name">Nome Cognome</label><br>
-                    <input type="text" id="name" name="name"><br>
-                    <label for="km">Km da percorrere</label><br>
-                    <input type="text" id="km" name="km"><br>
-                    <label for="km">Fascia d'età</label><br>
-                    <select id="age">
-                        <option>Maggiorenne</option>
-                        <option>Minorenne</option>
-                        <option>Over 65</option>
-                    </select>
+                    <div class=" py-3 text-center d-flex flex-row justify-content-between">
+                        <div class="col-4">
+                            <label for="name">Nome Cognome</label><br>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="col-4">
+                            <label for="km">Km da percorrere</label><br>
+                            <input type="text" id="km" name="km">
+                        </div>
+                        <div class="col-4">
+                            <label for="km">Fascia d'età</label><br>
+                            <select id="age" class="p-1">
+                                <option id="min">Minorenne</option>
+                                <option id="magg">Maggiorenne</option>
+                                <option id="over">Over 65</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-5">
+                        <button class="btn btn-primary" id="generate">Genera</button>
+                        <button class="ms-3 btn btn-danger" id="cancel">Annulla</button>
+                    </div>
                 </div>
-                <div class="col-12 pt-5">
-                    <div class="form text-center">
-                        <button class="btn btn-primary generate">Genera</button>
-                        <button class="btn btn-danger cancel">Annulla</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 offset-1 pt-3">
+                <h3 class="text-center fw-bold text-white">IL TUO BIGLIETTO</h3>
+                <div class="generated-ticket">
+                    <h5 class="ps-5 pt-3">DETTAGLIO PASSEGGERI</h5>
+                    <div class="ticket px-5 d-flex flex-row justify-content-between">
+                        <div class="col-2 cs-bg-gray">
+                            <h6 class="fw-bold ps-1">NOME PASSEGGERO</h6>
+                            <p id="insert-name" class="ps-1 fw-bold"></p>
+                        </div>
+                        <div class="col-2 ">
+                            <h6 class="fw-bold">Offerta</h6>
+                            <p id="insert-offer"></p>
+                        </div>
+                        <div class="col-2">
+                            <h6 class="fw-bold">Carrozza</h6>
+                            <p id="insert-carrozza"></p>
+                        </div>
+                        <div class="col-2">
+                            <h6 class="fw-bold">Codice CP</h6>
+                            <p id="insert-cp"></p>
+                        </div>
+                        <div class="col-2">
+                            <h6 class="fw-bold">Costo biglietto</h6>
+                            <p id="insert-price"></p>
+                        </div>
                     </div>
                 </div>
             </div>
