@@ -78,10 +78,15 @@ buttonElement.addEventListener('click', function () {
     discountValue = (sum / 100) * percentage;
     finalPrice = (sum - discountValue).toFixed(2);
     console.log(finalPrice);
-
+    
     insertOfferElement.innerText = 'Riduzione Senior';
     insertPriceElement.innerText = `${finalPrice} €`;
-    }
+    }    
+
+    const rndCarrozza = Math.floor(Math.random() * 12) +1 ;
+    const rndCp = Math.floor(Math.random() * 99999) +10000 ;
+    insertCarrozzaElement.innerText = rndCarrozza;
+    insertCpElement.innerText = rndCp;
 }
 });
 
