@@ -22,18 +22,18 @@
                     <div class=" py-3 text-center d-flex flex-row justify-content-between">
                         <div class="col-4">
                             <label for="name">Nome Cognome</label><br>
-                            <input type="text" id="name" name="name">
+                            <input type="text" id="name" name="name" value="Laura Bigoni">
                         </div>
                         <div class="col-4">
                             <label for="km">Km da percorrere</label><br>
-                            <input type="text" id="km" name="km">
+                            <input type="number" id="km" name="km" value="10">
                         </div>
                         <div class="col-4">
                             <label for="km">Fascia d'età</label><br>
                             <select id="age" class="p-1">
-                                <option id="min">Minorenne</option>
-                                <option id="magg">Maggiorenne</option>
-                                <option id="over">Over 65</option>
+                                <option value="min">Minorenne</option>
+                                <option value="magg">Maggiorenne</option>
+                                <option value="over">Over 65</option>
                             </select>
                         </div>
                     </div>
@@ -44,10 +44,10 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="generated-ticket">
             <div class="col-10 offset-1 pt-3">
                 <h3 class="text-center fw-bold text-white">IL TUO BIGLIETTO</h3>
-                <div class="generated-ticket">
+                <div class="ticket-form">
                     <h5 class="ps-5 pt-3">DETTAGLIO PASSEGGERI</h5>
                     <div class="ticket px-5 d-flex flex-row justify-content-between">
                         <div class="col-2 cs-bg-gray">

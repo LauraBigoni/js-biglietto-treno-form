@@ -15,7 +15,7 @@
     font-weight: bold;
 }
 
-#ticket .generated-ticket {
+#ticket .ticket-form {
     background-color: #fff;
     padding-bottom: 20px;
 }
@@ -26,4 +26,12 @@
 
 .cs-bg-gray {
     background-color: #808080;
+}
+
+#generated-ticket {
+    display: none;
+}
+
+#generated-ticket.visible {
+    display: flex;
 }

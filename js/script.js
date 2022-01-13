@@ -26,6 +26,8 @@ const kmElement = document.getElementById('km');
 const ageElement = document.getElementById('age');
 const buttonElement = document.getElementById('generate');
 const buttonDeleteElement = document.getElementById('cancel');
+
+const ticketElement = document.getElementById('generated-ticket');
 const insertNameElement = document.getElementById('insert-name');
 const insertOfferElement = document.getElementById('insert-offer');
 const insertCarrozzaElement = document.getElementById('insert-carrozza');
@@ -37,11 +39,6 @@ buttonElement.addEventListener('click', function () {
     const nameValue = nameElement.value;
     const kmValue = parseInt(kmElement.value);
     const ageValue = ageElement.value;
-    const price = 0.21;
-    let percentage = 0;
-    let discountValue = 0;
-    let sum = price * kmValue.toFixed(2);
-    let finalPrice = 0;
 
     console.log(nameValue);
     console.log(kmValue);
@@ -50,43 +47,44 @@ buttonElement.addEventListener('click', function () {
     nameElement.value = '';
     kmElement.value = '';
     ageElement.value = '';
+    
+    let price = 0.21 * kmValue;
 
     if (!(nameValue) || isNaN(kmValue)) {
-    alert ('Hai inserito dei valori non validi')
+    alert ('Hai inserito dei valori non validi');
 
     } else {
     insertNameElement.innerText = nameValue;
-    
+    ticketElement.classList.add('visible');
+
     // Calcolo il prezzo del biglietto e mostro in pagina i risultati
-    if (ageValue === 'Minorenne') {
-    percentage = 20;
-    discountValue = (sum / 100) * percentage;
-    finalPrice = (sum - discountValue).toFixed(2)
-    console.log(finalPrice);
+    if (ageValue === 'min') {
+    price *= 0.8;
+    console.log(price);
 
     insertOfferElement.innerText = 'Riduzione Minorenni';
-    insertPriceElement.innerText = `${finalPrice} €`;
+    insertPriceElement.innerText = price.toFixed(2) + `€`;
 
-    } else if (ageValue === 'Maggiorenne') {
-    console.log(sum);
+    } else if (ageValue === 'magg') {
+    console.log(price);
 
     insertOfferElement.innerText = 'Biglietto Standard';
-    insertPriceElement.innerText = `${sum} €`;
+    insertPriceElement.innerText = price.toFixed(2) + `€`;
 
-    } else if (ageValue === 'Over 65') {
-    percentage = 40;
-    discountValue = (sum / 100) * percentage;
-    finalPrice = (sum - discountValue).toFixed(2);
-    console.log(finalPrice);
-    
+    } else if (ageValue === 'over') {
+    price *= 0.6;
+    console.log(price);
+
     insertOfferElement.innerText = 'Riduzione Senior';
-    insertPriceElement.innerText = `${finalPrice} €`;
+    insertPriceElement.innerText = price.toFixed(2) + `€`;
     }    
 
     const rndCarrozza = Math.floor(Math.random() * 12) +1 ;
     const rndCp = Math.floor(Math.random() * 99999) +10000 ;
     insertCarrozzaElement.innerText = rndCarrozza;
     insertCpElement.innerText = rndCp;
+
+    
 }
 });
 
@@ -100,4 +98,6 @@ buttonDeleteElement.addEventListener('click', function () {
     insertCarrozzaElement.innerText = '';
     insertCpElement.innerText = '';
     insertPriceElement.innerText = '';
+
+    ticketElement.classList.remove('visible');
 });
