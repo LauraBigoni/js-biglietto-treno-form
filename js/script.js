@@ -50,7 +50,7 @@ buttonElement.addEventListener('click', function () {
     
     let price = 0.21 * kmValue;
 
-    if (!(nameValue) || isNaN(kmValue)) {
+    if (!isNaN(nameValue)) {
     alert ('Hai inserito dei valori non validi');
 
     } else {
